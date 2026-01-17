@@ -39,8 +39,10 @@ Start by filling out the header with the metadata for this enhancement.
 ## Summary
 
 Today there is a 1:1 mapping between templates and ansible roles. This document
-proposes a way to utilize a single ansible role as the basis for multiple
-templates that are published for users.
+proposes an API that enables a single ansible role to be used as the basis for
+multiple templates that are published for users. That enables a CSP to define a
+small number of ansible roles based on their infrastructure and use case needs,
+but expose many variations of curated catalog entries to users.
 
 ## Motivation
 
@@ -76,6 +78,12 @@ don't have access to add or modify ansible roles.
 * Enable the use of templates that don't use ansible at all.
 
 ## Proposal
+
+PublishedTemplate
+* references an existing ansible-based template
+* includes a Spec for that ansible-based template
+* includes the exclusive list of fields that the user can specify
+
 
 This section should explain what the proposal actually is. Enumerate
 *all* of the proposed changes at a *high level*, including all of the
